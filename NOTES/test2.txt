@@ -1,0 +1,124 @@
+Secunderabad,Kazipet,Warangal,Khammam,Vijeyawada,Rajamoundry,Vishakapatnam
+
+Vishakapatnam,Rajamoundry,Vijeyawada,Khammam,Warangal,Kazipet,Secunderabad
+
+08:30,09:12,09:18,09:58,10:30,11:00,12:10
+
+12:30,13:30,13:50,14:30,15:20,16:30,17:00
+
+100,150,200,250,300,350,500
+
+
+
+
+SELECT
+  CASE
+    WHEN starting_stations = 'SECUNDERABAD' AND ending_stations = 'KAZIPET' THEN 50
+    WHEN starting_stations = 'kazipet' AND end_station = 'Jammikunta' THEN 20
+    -- add more cases for other stations and fares
+    ELSE 0 -- default fare if no match is found
+  END AS fare
+FROM trains
+
+
+
+
+SELECT 
+    CASE
+        WHEN FIND_IN_SET('Delhi', start_station) AND FIND_IN_SET('Agra', end_station) THEN fare
+        WHEN FIND_IN_SET('Delhi', start_station) AND FIND_IN_SET('Mumbai', end_station) THEN fare + 10
+        WHEN FIND_IN_SET('Agra', start_station) AND FIND_IN_SET('Mumbai', end_station) THEN fare - 20
+        WHEN FIND_IN_SET('Agra', start_station) AND FIND_IN_SET('Jaipur', end_station) THEN fare + 5
+        WHEN FIND_IN_SET('Mumbai', start_station) AND FIND_IN_SET('Jaipur', end_station) THEN fare + 15
+        ELSE 0
+    END AS calculated_fare
+FROM train_fares;
+
+
+
+
+
+
+SELECT CASE WHEN FIND_IN_SET('Secunderabad', starting_stations) AND FIND_IN_SET('Kazipet', ending_stations) THEN fare WHEN FIND_IN_SET('Kazipet', starting_stations) AND FIND_IN_SET('Jammikunta', ending_stations) THEN fare + 10 WHEN FIND_IN_SET('Jammikunta', starting_stations) AND FIND_IN_SET('Manchirial', ending_stations) THEN fare + 5 WHEN FIND_IN_SET('Mancherial', starting_stations) AND FIND_IN_SET('Nagapur', ending_stations) THEN fare + 50 WHEN FIND_IN_SET('Nagapur', starting_stations) AND FIND_IN_SET('Bhopal', ending_stations) THEN fare + 25 ELSE 0 END AS fare FROM trains WHERE FIND_IN_SET('Secunderabad', starting_stations) AND FIND_IN_SET('Kazipet', ending_stations)
+
+
+
+SELECT 
+  CASE 
+    WHEN intermediate_stations = '' THEN fare
+    ELSE fare + (FIND_IN_SET(ending_stations, intermediate_stations) - FIND_IN_SET(starting_stations, intermediate_stations)) * intermediate_fare
+  END AS fare
+FROM trains
+WHERE starting_stations = 'Secunderabad' AND ending_stations = 'Jammikunta';
+
+
+
+SELECT 
+  CASE
+    WHEN find_in_set('Delhi', 'Delhi,Agra,Mumbai') AND find_in_set('Mumbai', 'Delhi,Agra,Mumbai') 
+    THEN (SELECT fare FROM train_routes WHERE start_station = 'Delhi' AND end_station = 'Mumbai')
+    
+    WHEN find_in_set('Delhi', 'Delhi,Agra,Mumbai') AND find_in_set('Agra', 'Delhi,Agra,Mumbai') 
+    THEN (SELECT fare FROM train_routes WHERE start_station = 'Delhi' AND end_station = 'Agra')
+    
+    WHEN find_in_set('Agra', 'Delhi,Agra,Mumbai') AND find_in_set('Mumbai', 'Delhi,Agra,Mumbai') 
+    THEN (SELECT fare FROM train_routes WHERE start_station = 'Agra' AND end_station = 'Mumbai')
+    
+    ELSE 0 -- No route found
+  END AS fare from trains WHERE FIND_IN_SET('Secunderabad', starting_stations) AND FIND_IN_SET('Kazipet', ending_stations)
+
+
+
+
+SELECT CASE WHEN FIND_IN_SET('Secunderabad,Aler,Kazipet', starting_stations) AND FIND_IN_SET('Kazipet,Aler,Secunderabad', ending_stations) THEN fare 
+WHEN FIND_IN_SET('Secunderabad,Kazipet,Jammikunta', starting_stations) AND FIND_IN_SET('Kazipet,Secunderabad,Aler,Jammikunta', ending_stations) THEN fare + 10
+ELSE 0 END AS fare FROM trains WHERE FIND_IN_SET('?', starting_stations) AND FIND_IN_SET('?', ending_stations)
+
+
+
+
+
+
+
+
+SELECT 
+  CASE
+    WHEN find_in_set('Secunderabad', 'Secunderabad,Aler,Kazipet') AND find_in_set('Kazipet', 'Secunderabad,Aler,Kazipet') 
+    THEN fare
+    WHEN find_in_set('Secunderabad', 'Secunderabad,Kazipet,Jammikunta') AND find_in_set('Jammikunta', 'Secunderabad,Kazipet,Jammikunta') 
+    THEN fare+30  
+    ELSE 0 -- No route found
+  END AS fare from trains WHERE FIND_IN_SET('Secunderabad', starting_stations) AND FIND_IN_SET('Kazipet', ending_stations)
+
+
+
+
+
+
+
+
+
+Automatically the comma between text
+
+<form>
+  <label for="values">Enter comma-separated values:</label>
+  <input type="text" name="values" id="values">
+  <button type="submit">Submit</button>
+</form>
+
+
+<script>
+  var input = document.getElementById("values");
+
+  input.addEventListener("keyup", function(event) {
+    // Check if the user typed a comma
+    if (event.key === ",") {
+      // Add a comma after the value
+      input.value += ",";
+    }
+  });
+</script>
+
+
+
+
