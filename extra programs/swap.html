@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Box Swap</title>
+    <style>
+        /* Style for the button */
+        .transparent-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+    </style>
+    <script>
+        function swapText() {
+            // Get the values from the text boxes
+            var textBox1Value = document.getElementById("textbox1").value;
+            var textBox2Value = document.getElementById("textbox2").value;
+
+            // Swap the values
+            document.getElementById("textbox1").value = textBox2Value;
+            document.getElementById("textbox2").value = textBox1Value;
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <input type="text" id="textbox1" placeholder="Type here..."><br>
+    <center>
+    <button onclick="swapText()" class="transparent-button">
+        <img src="images/updo.png" alt="Arrow Up" width="20" height="20">
+    </button></center>
+    <input type="text" id="textbox2" placeholder="Type here...">
+    </center>
+</body>
+</html>

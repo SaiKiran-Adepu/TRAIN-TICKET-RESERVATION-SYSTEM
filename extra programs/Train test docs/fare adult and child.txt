@@ -1,0 +1,116 @@
+    int r =rs1.getInt(1);
+            out.println("<td><textarea rows1 cols=15 name=bsf readonly>"+r+"</textarea></td>");
+                  out.println("BASE FARE:&nbsp"+r);
+                  //int q;
+   switch(ad) {
+               case 0:
+                     r=r-r;
+              out.println("<br>");
+              break;
+            case 1:
+                     r=r*1;
+              out.println("<br>");
+              break;
+               case 2:
+               r=r*2;
+                out.println("<br>");
+               break;
+                case 3:      
+               r=r*3;
+               out.println("<br>");
+               break;
+              case 4:      
+               r=r*4;
+              out.println("<br>");
+              out.println("<br>");
+               break;
+                case 5:
+               r=r*5;
+               out.println("<br>");
+               break;
+               case 6:
+              r=r*6;
+              out.println("<br>");
+              break;
+               case 7:
+               r=r*7;
+              out.println("<br>");
+              break;
+               case 8:
+               r=r*8;
+              out.println("<br>");
+              break;
+               case 9:
+               r=r*9;
+              out.println("<br>");
+              break;
+              case 10:
+               r=r*10;
+              out.println("<br>");
+              break;
+            
+            
+            default:
+               //out.println("It's definetly executes.");
+            //out.println("<br>");   
+         }
+         
+         
+            int r1=rs1.getInt(1);
+         switch(ch) {
+            case 0:
+                     r1=r1-r1;
+              out.println("<br>");
+              break;
+            case 1:
+                     r1=r1/2;
+              out.println("<br>");
+              break;
+               case 2:
+               r1=r1*2/2;
+                out.println("<br>");
+               break;
+                case 3:      
+               r1=r1/2*3;
+               out.println("<br>");
+               break;
+              case 4:      
+               r1=r1/2*4;
+              out.println("<br>");
+              out.println("<br>");
+               break;
+                case 5:
+               r1=r1/2*5;
+               out.println("<br>");
+               break;
+               case 6:
+               r1=r1/2*6;
+              out.println("<br>");
+              break;
+               case 7:
+               r1=r1/2*7;
+              out.println("<br>");
+              break;
+               case 8:
+               r1=r1/2*8;
+              out.println("<br>");
+              break;
+               case 9:
+               r1=r1/2*9;
+              out.println("<br>");
+              break;
+              case 10:
+               r1=r1/2*10;
+              out.println("<br>");
+              break;
+            
+            
+            default:
+               //out.println("It's definetly executes.");
+            //out.println("<br>");   
+         }
+                 int s1;
+                 s1=r+r1;
+
+         
+         out.println("<td><textarea rows1 cols=15 name=rs readonly>"+s1+"</textarea></td>");

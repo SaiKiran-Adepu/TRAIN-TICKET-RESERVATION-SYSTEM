@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Details</title>
+    <script>
+        function addPassenger() {
+            var passengerContainer = document.getElementById("passengerContainer");
+            
+            var newPassengerDiv = document.createElement("div");
+            newPassengerDiv.innerHTML = "<label>Passenger Name:</label> <input type='text' name='passengerName[]'><br>";
+            
+            passengerContainer.appendChild(newPassengerDiv);
+        }
+    </script>
+</head>
+<body>
+    <h1>Booking Details</h1>
+
+    <p>You have selected the following train for booking:</p>
+    <!-- Display train details here -->
+
+    <h2>Passenger Details</h2>
+    <form action="process_booking.jsp" method="post">
+        <div id="passengerContainer">
+            <label>Passenger Name:</label> <input type="text" name="passengerName[]"><br>
+        </div>
+        <button type="button" onclick="addPassenger()">+ Add Passenger</button>
+        <br><br>
+        <input type="submit" value="Confirm Booking">
+    </form>
+</body>
+</html>

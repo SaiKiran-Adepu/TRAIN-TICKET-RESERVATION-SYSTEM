@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dropdown List Example</title>
+  <script>
+    function showAlert() {
+      var selectedValue = document.getElementById("myList").value;
+      if (selectedValue === "option1" || selectedValue === "option3") {
+        alert("You selected: " + selectedValue);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Dropdown List Example</h1>
+  <p>Select an item from the dropdown list:</p>
+  <select id="myList" onchange="showAlert()">
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+    <option value="option4">Option 4</option>
+  </select>
+</body>
+</html>

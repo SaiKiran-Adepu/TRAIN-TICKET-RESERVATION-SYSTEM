@@ -1,0 +1,207 @@
+SECUNDERABAD,ALER,KAZIPET,JAMMIKUNTA,PEDDAPALLI,RAMAGUNDAM,MANCHERIAL,KAGAZNAGAR,BALLARSHA,NAGPUR,BHOPAL,VEERANGAM LAXMIBHAI,AGRA,NEW DELHI,DELHI
+
+
+SECUNDERABAD,BHONGIR,KAZIPET,JAMMIKUNTA,PEDDAPALLI,RAMAGUNDAM,MANCHIRYAL,BELLAMPALLI,SIRPUR KAGHAZNAGAR
+SECUNDERABAD,ALER,KAZIPET,JAMMIKUNTA,PEDDAPALLI,RAMAGUNDAM,MANCHIRYAL,KAGAZNAGAR,BALLARSHA,NAGPUR,BHOPAL,VEERANGAM LAXMIBHAI,AGRA,NEW DELHI,DELHI
+
+
+
+<a href="logout.jsp"><img src="images/lo3.png" width="40"height="40" placeholder="logout" name="logout"></a></aside></li>
+    
+for retrieve from Db
+<%@ page import="java.sql.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Retrieve Data Example</title>
+</head>
+<body>
+  <h1>Retrieve Data Example</h1>
+  <% 
+  // Retrieve the parameters from the HTML form
+  String name = request.getParameter("name");
+  int age = Integer.parseInt(request.getParameter("age"));
+
+  // Set up database connection
+  String url = "jdbc:mysql://localhost:3306/yourdatabase";
+  String username = "yourusername";
+  String password = "yourpassword";
+  Connection conn = null;
+  Statement stmt = null;
+  ResultSet rs = null;
+  
+  try {
+    Class.forName("com.mysql.jdbc.Driver");
+    conn = DriverManager.getConnection(url, username, password);
+    
+    // Execute SQL query with parameters
+    String sql = "SELECT * FROM yourtable WHERE name='" + name + "' AND age=" + age;
+    stmt = conn.createStatement();
+    rs = stmt.executeQuery(sql);
+    
+    // Display results
+    if (rs.next()) {
+      do {
+        out.println("ID: " + rs.getInt("id") + " - Name: " + rs.getString("name") + " - Age: " + rs.getInt("age") + "<br>");
+      } while (rs.next());
+    } else {
+      out.println("0 results");
+    }
+  } catch (Exception e) {
+    out.println("Exception: " + e.getMessage());
+  } finally {
+    try { rs.close(); } catch (Exception e) {}
+    try { stmt.close(); } catch (Exception e) {}
+    try { conn.close(); } catch (Exception e) {}
+  }
+  %>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+for ticket booking GPT
+
+
+<form method="post" action="insert.jsp">
+  <input type="hidden" name="id" value="<%= id %>">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+  <br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+  <br>
+  <input type="submit" name="submit" value="Submit">
+</form>
+
+
+
+
+<%
+// Retrieve selected record from database
+int id = Integer.parseInt(request.getParameter("id"));
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "username", "password");
+PreparedStatement stmt = conn.prepareStatement("SELECT * FROM mytable WHERE id = ?");
+stmt.setInt(1, id);
+ResultSet rs = stmt.executeQuery();
+if (rs.next()) {
+  // Display selected record to user
+  %>
+  <h2><%= rs.getString("name") %></h2>
+  <p><%= rs.getString("description") %></p>
+  <a href="enquiry.html?id=<%= id %>">Enquire Now</a>
+  <%
+}
+%>
+
+
+
+
+<%
+// Retrieve enquiry data from form
+int id = Integer.parseInt(request.getParameter("id"));
+String name = request.getParameter("name");
+String email = request.getParameter("email");
+
+// Insert enquiry data into database
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "username", "password");
+PreparedStatement stmt = conn.prepareStatement("INSERT INTO enquiries (id, name, email) VALUES (?, ?, ?)");
+stmt.setInt(1, id);
+stmt.setString(2, name);
+stmt.setString(3, email);
+stmt.executeUpdate();
+%>
+
+
+
+
+
+
+to hold multiple html parameters to a single sting
+
+<%
+  String param1 = request.getParameter("param1");
+  String param2 = request.getParameter("param2");
+  String result = myStringOperator(param1, param2);
+%>
+
+<p>Result: <%= result %></p>
+
+
+
+
+
+
+
+
+ if(s1ac==null)
+        {
+        
+            s1ac=",";
+        }
+            else if(s2ac==null)
+            {
+            s2ac=",";
+            }
+            else if(s2ac==null)
+            {
+            s3ac=",";
+            }
+            else if(sleeper==null)
+            {
+            sleeper=",";
+            }
+            else if(s2s==null)
+            {
+            s2s=",";
+            }
+            
+
+
+ if(gen==null)
+            {
+            gen=",";
+            }
+         else if(ld==null)
+            {
+            ld=",";
+            }
+            else if(tkl==null)
+            {
+            tkl=",";
+            }
+            else if(ptkl==null)
+            {
+            ptkl=",";
+            }
+            else if(phc==null)
+            {
+            phc=",";
+            }
+            
+
+
+
+trains schedule
+CREATE TABLE train_schedule (
+    id INT NOT NULL AUTO_INCREMENT,
+    train_number INT NOT NULL,
+    station_name VARCHAR(50) NOT NULL,
+    arrival_time TIME NOT NULL,
+    departure_time TIME NOT NULL,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO train_schedule (train_number, station_name, arrival_time, departure_time)
+VALUES (123, 'Station A', '08:00:00', '08:10:00'),
+       (123, 'Station B', '08:20:00', '08:30:00'),
+       (123, 'Station C', '08:40:00', '08:50:00');
+
+
+

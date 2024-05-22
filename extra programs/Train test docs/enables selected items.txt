@@ -1,0 +1,43 @@
+<label for="fruit">Select a fruit:</label>
+<select id="fruit" onchange="updateFruit()">
+  <option value="">Please select a fruit</option>
+  <option value="apple">Apple</option>
+  <option value="banana">Banana</option>
+  <option value="orange">Orange</option>
+</select>
+
+<label for="color">Select a color:</label>
+<select id="color">
+  <option value="">Please select a fruit first</option>
+  <option value="red">Red</option>
+  <option value="yellow">Yellow</option>
+  <option value="orange">Orange</option>
+  <option value="green">Green</option>
+</select>
+
+<script>
+function updateFruit() {
+  var fruit = document.getElementById("fruit").value;
+  var color = document.getElementById("color");
+  color.disabled = false;
+  
+  // enable/disable options based on the selected fruit
+  if (fruit === "apple") {
+    color.selectedIndex = 0; // reset selection
+    color.options[2].disabled = true; // disable orange
+  } else if (fruit === "banana") {
+    color.selectedIndex = 0; // reset selection
+    color.options[0].disabled = true; // disable red
+  } else if (fruit === "orange") {
+    color.selectedIndex = 0; // reset selection
+    color.options[1].disabled = true; // disable yellow
+  } else {
+    color.selectedIndex = 0; // reset selection
+    color.options[0].disabled = true; // disable "Please select a fruit first"
+    color.options[1].disabled = true; // disable red
+    color.options[2].disabled = true; // disable yellow
+    color.options[3].disabled = true; // disable orange
+    color.options[4].disabled = true; // disable green
+  }
+}
+</script>

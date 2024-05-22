@@ -1,0 +1,64 @@
+<% 
+   session.setAttribute("mySessionAttribute", "This is my session attribute."); 
+//in first page
+%>
+
+
+<% 
+   String myAttribute = (String) session.getAttribute("mySessionAttribute"); 
+   out.println("Session Attribute Value: " + myAttribute); 
+//place it in second page and similarlly where you want
+%>
+
+<%
+  HttpSession session = request.getSession(false); // get current session if it exists
+
+  if (session != null) { // check if session exists
+    session.invalidate(); // invalidate the session
+  }
+  
+  response.sendRedirect("other-page.jsp"); // redirect to other page
+%>
+
+
+
+
+for integers
+first page
+int no1 =Integer.parseInt(request.getParameter("number"));
+            session.setAttribute("nu",no1); 
+
+for second page
+Integer i=(Integer)session.getAttribute("nu"); 
+  Integer i=(Integer)session.getAttribute("nu"); 
+     
+	 if(i==null)
+	 {
+		response.sendRedirect("una1.jsp");
+	 }
+	 else
+	 {
+		int k=i.intValue();
+       //out.print("<textarea>"+k);
+    out.println("<textarea rows1 cols=15 name = acid id=acid1>"+k+"</textarea>");
+	 }	
+
+
+for stings
+first page
+
+String name=request.getParameter("uname");  
+out.print("Welcome "+name);  
+session.setAttribute("user",name);  
+
+for second page
+
+String name1=(String)session.getAttribute("user");  
+if(name1==null)
+		{
+			response.sendRedirect("una1.jsp");
+		}
+else
+		{
+	    out.println("<textarea rows1 cols=15 name = acid id=acid1>"+name1+"</textarea>"); 				
+ 		}

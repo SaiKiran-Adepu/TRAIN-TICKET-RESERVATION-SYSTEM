@@ -1,0 +1,25 @@
+for two auto increments by triggers 
+
+
+CREATE TABLE example (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    other_id INT(11) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+DELIMITER $$
+CREATE TRIGGER increment_other_id BEFORE INSERT ON example
+FOR EACH ROW
+BEGIN
+    SET NEW.other_id = (SELECT IFNULL(MAX(other_id), 0) + 1 FROM example);
+END$$
+DELIMITER ;
+
+
+
+ie 
+
+BEGIN
+    SET NEW.Seat_Number = (SELECT IFNULL(MAX(Seat_Number),0) + 1 FROM train_reservation);
+END

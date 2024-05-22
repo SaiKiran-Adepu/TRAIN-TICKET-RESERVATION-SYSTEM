@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirect Page</title>
+    <script type="text/javascript">
+        // Function to redirect after a specified time
+        function redirect() {
+            setTimeout(function(){
+                document.getElementById("redirectButton").click();
+            }, 8000); // 8000 milliseconds = 8 seconds
+        }
+    </script>
+</head>
+<body onload="redirect()">
+    <h1>Redirecting in 8 seconds...</h1>
+    <!-- You can add any content you want to display during the redirect -->
+
+    <!-- Hidden button that will be clicked automatically after 8 seconds -->
+    <form action="destination_page.jsp" method="post">
+        <button id="redirectButton" style="display: none;">Redirect</button>
+    </form>
+</body>
+</html>
