@@ -1,0 +1,86 @@
+THE SKA TRAIN Reservation System V 2.0
+
+In this version here just modified the session files that are written in the single page 
+
+with simple code complexity
+
+
+Veresion 3.0
+
+In this version mainly foucused on the java script as a main file for index and user admin ui time running and date
+
+Version 3.1
+
+Added the extra program for the admin to know the fund in the db ie reservaton and general ticket
+
+version 4.0
+
+Added the Gender to the reservation for both user and admin and code simplecty.
+
+Restricted if the User dont have any sufficent fund to book the ticket it will display the No balance in AC message.
+
+Version 4.1
+
+In this Version Restricted the Ticket Printing that when User Wrongly enterd the password to print the tickets
+
+and modified the admin and user UI logins 
+
+Version 5
+
+In this Version Rectified/Solved the sitting system issue for the passengers book a ticket more than one person will get a separate seats 
+
+Code Complexity.
+
+Version 6
+
+in this version included the Date& Time formats that are 15-Mar-2024 and time format 12:20:22 AM
+
+Which Will simplely convertion of string times into time formats and date format
+
+Version 7.0
+
+In this Version included the e-ticket cancellation for both user and admin the ammount of ticket will be credited into the user account the same account used while booking a ticket and with printable cancellation ticket with added 3-4 coloums in train_reservation table 
+
+here we can also see the status of a resrvation is it CAN or CNF 
+
+in this version auto redirection added after a 5 seconds the page will automatically redirects to the another page withput clicking the print button while reservation and cancel e ticket
+
+Version 8.0
+
+In this Version included the automatic passenger increases when clicks on the add+ new passenger
+this will solved the issue with the credability of passengers when ticket booking
+
+here also included the automatic letters to capital when user enters a passenger name even for admin 
+for this we used the code 
+Sting s="hyderabad";
+s.toUpperCase();
+
+also included the payment mode that will display in the ticket
+
+also in this version validated the things that are cancelled tickets will not be cancelled again....
+and cancelled tickets are now separeted with Confirmed tickets user/admin will know the status of booking 
+if user cancelled the ticket the cancelled tag CAN will displayable when printing the ticket 
+lot of development done in this version of SKA-TRAIN-RESERVATION-SYSTEM.....
+
+
+Version 9.0
+
+In This version retrived the station names automatically retives from the data base tbale these are used to safe the unwanted stationnames and easy to use the station names 
+
+here mainly used for index userr and admin
+
+in admin train reservation,add new train change fare train fare
+
+and in this version extended the train routes from Mumbai to Delhi Mumbai to Kolkata Mumbai to Bangaluru Mumbai to Chennai
+
+Kolkata to New Delhi Kolkata to Chennai Kolkata to Begaluru
+
+Verssion 10.0
+
+In this Version implemented the swaping the staion names when clicking on a double arrow then station names will swaps
+
+and used some icons images to and from with navigation icons for index user and admin
+
+
+
+

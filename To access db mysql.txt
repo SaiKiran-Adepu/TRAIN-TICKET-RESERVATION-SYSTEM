@@ -1,0 +1,4 @@
+to access mysql db from wamp server
+first start all seervices then from wamp localhost directly from php myadmin
+user root
+pass tiger
