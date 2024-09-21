@@ -1,4 +1,4 @@
-# SKA Train Ticket Reservation System
+# Train Ticket Reservation System
 The Application is mainly based on the IRCTC web application here passengers can allowed to book a reservation ticket while login in the application 
 to achieve this i am used Technologies front end Html, CSS, JS Backend JAVA JSP, and Database MYSQL
 in this project there are 3 main modules  
